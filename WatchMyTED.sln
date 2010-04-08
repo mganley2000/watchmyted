@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchMyTED", "ApplicationLibrary\WatchMyTED\WatchMyTED.csproj", "{4D565E74-B567-49B8-8457-ACA8443856FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "EnterpriseLibrary\Library\Library.csproj", "{71561CF2-3F5F-4173-9E5E-F214BCDAFAD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D565E74-B567-49B8-8457-ACA8443856FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D565E74-B567-49B8-8457-ACA8443856FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D565E74-B567-49B8-8457-ACA8443856FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D565E74-B567-49B8-8457-ACA8443856FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71561CF2-3F5F-4173-9E5E-F214BCDAFAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71561CF2-3F5F-4173-9E5E-F214BCDAFAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71561CF2-3F5F-4173-9E5E-F214BCDAFAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71561CF2-3F5F-4173-9E5E-F214BCDAFAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

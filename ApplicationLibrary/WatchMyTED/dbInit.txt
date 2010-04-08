@@ -1,0 +1,164 @@
+﻿BEGIN TRANSACTION;
+CREATE TABLE [MeterAudit] (
+[MaID] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+[MaMeID] INTEGER  NOT NULL,
+[MaChangeDate] DATE  NOT NULL,
+[MaOldName] VARCHAR(64)  NULL,
+[MaNewName] VARCHAR(64)  NULL
+);
+CREATE TABLE [Interval] (
+[InID] INTEGER  NOT NULL PRIMARY KEY,
+[InName] VARCHAR(16)  NOT NULL
+);
+INSERT INTO "Interval" VALUES(0,'1 second');
+INSERT INTO "Interval" VALUES(1,'2 second');
+INSERT INTO "Interval" VALUES(2,'1 minute');
+INSERT INTO "Interval" VALUES(3,'5 minute');
+INSERT INTO "Interval" VALUES(4,'15 minute');
+INSERT INTO "Interval" VALUES(5,'30 minute');
+INSERT INTO "Interval" VALUES(6,'hourly');
+INSERT INTO "Interval" VALUES(7,'daily');
+CREATE TABLE [MeterType] (
+[MtID] INTEGER  PRIMARY KEY NOT NULL,
+[MtName] VARCHAR(16)  NOT NULL,
+[MtVersion] VARCHAR(16)  NOT NULL
+);
+INSERT INTO "MeterType" VALUES(0,'ted_v1','1');
+CREATE TABLE [UnitOfMeasure] (
+[UnID] INTEGER  NOT NULL PRIMARY KEY,
+[UnName] VARCHAR(8)  NOT NULL
+);
+INSERT INTO "UnitOfMeasure" VALUES(0,'kWh');
+INSERT INTO "UnitOfMeasure" VALUES(1,'kW');
+CREATE TABLE [Meter] (
+[MeID] INTEGER  PRIMARY KEY NOT NULL,
+[MeMtID] INTEGER  NOT NULL,
+[MeName] VARCHAR(32)  NULL,
+[MeDescription] VARCHAR(256)  NULL,
+[MeNewDate] DATE  NULL,
+[MeRaID] INTEGER  NULL
+);
+CREATE TABLE [Reading] (
+[JaMeID] INTEGER  NOT NULL,
+[JaInID] INTEGER  NOT NULL,
+[JaDatestamp] VARCHAR(20)  NOT NULL,
+[JaUnID] INTEGER  NOT NULL,
+[JaRead] FLOAT DEFAULT '0.0' NOT NULL,
+PRIMARY KEY ([JaMeID],[JaInID],[JaDatestamp],[JaUnID])
+);
+CREATE TABLE [SelectChart] (
+[ScID] INTEGER DEFAULT '(0)' PRIMARY KEY NOT NULL,
+[ScName] VARCHAR(32)  NOT NULL,
+[ScSortOrder] INTEGER  NOT NULL
+);
+INSERT INTO "SelectChart" VALUES(0,'Daily Energy',0);
+INSERT INTO "SelectChart" VALUES(1,'Hourly Energy',1);
+INSERT INTO "SelectChart" VALUES(2,'Daily Cost',2);
+CREATE TABLE [SelectDate] (
+[SdID] INTEGER  NOT NULL PRIMARY KEY,
+[SdName] VARCHAR(32)  NOT NULL,
+[SdSortOrder] INTEGER  NOT NULL
+);
+INSERT INTO "SelectDate" VALUES(0,'Current Month',1);
+INSERT INTO "SelectDate" VALUES(1,'3 Months',2);
+INSERT INTO "SelectDate" VALUES(2,'6 Months',3);
+INSERT INTO "SelectDate" VALUES(3,'12 Months',4);
+INSERT INTO "SelectDate" VALUES(4,'10 Days',0);
+CREATE TABLE [SelectTime] (
+[StID] INTEGER  NOT NULL PRIMARY KEY,
+[StName] VARCHAR(16)  NOT NULL,
+[StSortOrder] INTEGER  NULL
+);
+INSERT INTO "SelectTime" VALUES(0,'Midnight+',0);
+INSERT INTO "SelectTime" VALUES(1,'1 AM',1);
+INSERT INTO "SelectTime" VALUES(2,'2 AM',2);
+INSERT INTO "SelectTime" VALUES(3,'3 AM',3);
+INSERT INTO "SelectTime" VALUES(4,'4 AM',4);
+INSERT INTO "SelectTime" VALUES(5,'5 AM',5);
+INSERT INTO "SelectTime" VALUES(6,'6 AM',6);
+INSERT INTO "SelectTime" VALUES(7,'7 AM',7);
+INSERT INTO "SelectTime" VALUES(8,'8 AM',8);
+INSERT INTO "SelectTime" VALUES(9,'9 AM',9);
+INSERT INTO "SelectTime" VALUES(10,'10 AM',10);
+INSERT INTO "SelectTime" VALUES(11,'11 AM',11);
+INSERT INTO "SelectTime" VALUES(12,'Noon',12);
+INSERT INTO "SelectTime" VALUES(13,'1 PM',13);
+INSERT INTO "SelectTime" VALUES(14,'2 PM',14);
+INSERT INTO "SelectTime" VALUES(15,'3 PM',15);
+INSERT INTO "SelectTime" VALUES(16,'4 PM',16);
+INSERT INTO "SelectTime" VALUES(17,'5 PM',17);
+INSERT INTO "SelectTime" VALUES(18,'6 PM',18);
+INSERT INTO "SelectTime" VALUES(19,'7 PM',19);
+INSERT INTO "SelectTime" VALUES(20,'8 PM',20);
+INSERT INTO "SelectTime" VALUES(21,'9 PM',21);
+INSERT INTO "SelectTime" VALUES(22,'10 PM',22);
+INSERT INTO "SelectTime" VALUES(23,'11 PM',23);
+INSERT INTO "SelectTime" VALUES(24,'-Midnight',24);
+CREATE TABLE [Configuration] (
+[CnName] VARCHAR(64)  NOT NULL,
+[CnDescription] VARCHAR(128)  NOT NULL,
+[CnCOMPort] VARCHAR(16)  NOT NULL,
+[CnBaud] INTEGER  NOT NULL,
+[CnParity] INTEGER  NOT NULL,
+[CnDataBits] INTEGER  NOT NULL,
+[CnStopBits] INTEGER  NOT NULL,
+[CnSelectedRate] INTEGER  NOT NULL,
+[CnTEDMTU0Ind] BOOLEAN DEFAULT '0' NULL,
+[CnTEDUrl1] VARCHAR(128) NULL,
+[CnTEDUrl2] VARCHAR(128) NULL,
+[CnTEDUrl3] VARCHAR(128) NULL,
+[CnGAEReadingsServiceUrl] VARCHAR(128) NULL,
+[CnGAEGmail] VARCHAR(64) NULL,
+[CnGAEPassword] VARCHAR(64) NULL,
+[CnGAESiteUrl] VARCHAR(128) NULL,
+[CnGAEAppName] VARCHAR(128) NULL
+);
+INSERT INTO "Configuration" VALUES('default','main configuration','COM3',9600,0,8,1,22,1,'http://ted5000/history/minutehistory.xml?MTU=0&INDEX=1&COUNT=10','http://ted5000/history/secondhistory.xml?MTU=0&INDEX=1&COUNT=10','http://ted5000/history/hourlyhistory.xml?MTU=0&INDEX=1&COUNT=10','http://myenergyuse.appspot.com/readingssvc','','','http://myenergyuse.appspot.com','myenergyuse');
+CREATE TABLE [Rate] (
+[RaID] INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL,
+[RaName] VARCHAR(32)  NOT NULL,
+[RaDescription] VARCHAR(128)  NULL,
+[RaSeasonalInd] BOOLEAN DEFAULT '0' NOT NULL,
+[RaBasicCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaSummerBasicCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaWinterBasicCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaPeakCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaOffPeakCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaPeakStartHour] INTEGER DEFAULT '8' NOT NULL,
+[RaPeakEndHour] INTEGER DEFAULT '15' NOT NULL,
+[RaSummerPeakCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaSummerOffPeakCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaSummerPeakStartHour] INTEGER DEFAULT '8' NOT NULL,
+[RaSummerPeakEndHour] INTEGER DEFAULT '15' NOT NULL,
+[RaPeakWeekendCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaWinterPeakCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaWinterOffPeakCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaWinterPeakStartHour] INTEGER DEFAULT '8' NOT NULL,
+[RaWinterPeakEndHour] INTEGER DEFAULT '15' NOT NULL,
+[RaSummerStartDate] VARCHAR(20) DEFAULT 'June 1' NOT NULL,
+[RaBasicChargesInd] BOOLEAN DEFAULT '1' NOT NULL,
+[RaTimeOfUseChargesInd] BOOLEAN DEFAULT '0' NOT NULL,
+[RaCurrentInd] BOOLEAN DEFAULT '0' NULL,
+[RaOffPeakWeekendCharge] FLOAT DEFAULT '0.10' NOT NULL,
+[RaSummerPeakWeekendCharge] FLOAT DEFAULT '.1' NOT NULL,
+[RaSummerOffPeakWeekendCharge] FLOAT DEFAULT '.1' NOT NULL,
+[RaWinterPeakWeekendCharge] FLOAT DEFAULT '.1' NOT NULL,
+[RaWinterOffPeakWeekendCharge] FLOAT DEFAULT '.1' NOT NULL,
+[RaSummerEndDate] VARCHAR(20) DEFAULT 'September 30' NOT NULL,
+[RaPeakWeekendStartHour] INTEGER DEFAULT '8' NOT NULL,
+[RaPeakWeekendEndHour] INTEGER DEFAULT '15' NOT NULL,
+[RaSummerPeakWeekendStartHour] INTEGER DEFAULT '8' NOT NULL,
+[RaSummerPeakWeekendEndHour] INTEGER DEFAULT '15' NOT NULL,
+[RaWinterPeakWeekendStartHour] INTEGER DEFAULT '8' NOT NULL,
+[RaWinterPeakWeekendEndHour] INTEGER DEFAULT '15' NOT NULL
+);
+INSERT INTO "Rate" VALUES(19,'F99','default',0,0.456666,0.1,0.4,0.21,0.18,3,6,0.0,0.0,0,0,0.1,0.0,0.0,0,0,'June',1,1,0,0.09,0.0,0.0,0.0,0.0,'August',8,15,8,0,0,0);
+INSERT INTO "Rate" VALUES(20,'F101','default',1,0.456666,0.1,0.4,0.21,0.15,3,6,0.28,0.23,0,0,0.11,0.22,0.19,0,0,'June',1,1,0,0.09,0.25,0.22005,0.2,0.18,'September',8,15,8,0,0,0);
+INSERT INTO "Rate" VALUES(22,'F103','default',1,20.0,0.1,0.4,0.251,0.26,10,13,0.111,0.5,10,13,0.27,0.3,0.7,8,15,'May',1,1,1,0.281,0.2,0.6,0.4,0.811,'August',11,13,9,12,12,15);
+CREATE TABLE [Version] (
+[VeNumber] VARCHAR(32)  NOT NULL PRIMARY KEY
+);
+INSERT INTO "Version" VALUES('v1.0');
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('Rate',22);
+COMMIT;
