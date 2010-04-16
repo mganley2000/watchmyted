@@ -1,4 +1,4 @@
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     partial class MainForm
     {
@@ -51,7 +51,7 @@ namespace Energy.EnergyWatcher
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutEnergyWatcherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutWatchMyTEDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -222,7 +222,7 @@ namespace Energy.EnergyWatcher
             this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkToolStripMenuItem,
             this.toolStripSeparator2,
-            this.aboutEnergyWatcherToolStripMenuItem});
+            this.aboutWatchMyTEDToolStripMenuItem});
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.H)));
             this.toolStripMenuItem3.Size = new System.Drawing.Size(40, 20);
@@ -240,12 +240,12 @@ namespace Energy.EnergyWatcher
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(184, 6);
             // 
-            // aboutEnergyWatcherToolStripMenuItem
+            // aboutWatchMyTEDToolStripMenuItem
             // 
-            this.aboutEnergyWatcherToolStripMenuItem.Name = "aboutEnergyWatcherToolStripMenuItem";
-            this.aboutEnergyWatcherToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.aboutEnergyWatcherToolStripMenuItem.Text = "About Watch My TED";
-            this.aboutEnergyWatcherToolStripMenuItem.Click += new System.EventHandler(this.aboutEnergyWatcherToolStripMenuItem_Click);
+            this.aboutWatchMyTEDToolStripMenuItem.Name = "aboutWatchMyTEDToolStripMenuItem";
+            this.aboutWatchMyTEDToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.aboutWatchMyTEDToolStripMenuItem.Text = "About Watch My TED";
+            this.aboutWatchMyTEDToolStripMenuItem.Click += new System.EventHandler(this.aboutWatchMyTEDToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 
@@ -372,7 +372,7 @@ namespace Energy.EnergyWatcher
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem aboutEnergyWatcherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutWatchMyTEDToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loggingPowerToolStripMenuItem;

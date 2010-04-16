@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// Customary About the application information form

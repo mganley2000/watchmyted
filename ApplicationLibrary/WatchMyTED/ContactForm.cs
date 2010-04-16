@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// Basic contact form with only an email address listed currently

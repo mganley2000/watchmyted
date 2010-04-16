@@ -12,7 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Diagnostics;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// Main application form with all controls and access to functionality
@@ -627,7 +627,7 @@ namespace Energy.EnergyWatcher
 
 
 
-        private void aboutEnergyWatcherToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aboutWatchMyTEDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmAbout = new AboutForm();
 

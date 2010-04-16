@@ -7,7 +7,7 @@ using ZedGraph;
 using Energy.Library;
 using System.Linq;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
 
     /// <summary>

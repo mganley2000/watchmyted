@@ -12,7 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Diagnostics;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     public partial class MainForm
     {

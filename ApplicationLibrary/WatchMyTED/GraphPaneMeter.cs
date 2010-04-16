@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ZedGraph;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// Class to allow storage of meterID with GraphPane

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Energy.Library;
 using ZedGraph;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// Historical Chart viewing

@@ -1,4 +1,4 @@
-﻿namespace Energy.EnergyWatcher
+﻿namespace Energy.WatchMyTED
 {
     partial class TEDConfigurationForm
     {

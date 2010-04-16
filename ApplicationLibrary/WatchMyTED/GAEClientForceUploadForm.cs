@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Energy.Library;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// This form used as a testing tool to send data to myenergyuse GAE site

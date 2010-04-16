@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Energy.Library;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// View TED data via query of TED Gateway

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Energy.Library;
 
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// Confirmation dialog asking if the Rate should really be added

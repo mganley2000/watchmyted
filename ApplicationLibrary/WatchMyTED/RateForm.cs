@@ -7,7 +7,7 @@ using System.Text;
 using Energy.Library;
 using System.Windows.Forms;
 
-namespace Energy.EnergyWatcher
+namespace Energy.WatchMyTED
 {
     /// <summary>
     /// Form to add and edit rate information
