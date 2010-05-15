@@ -60,7 +60,7 @@ namespace Energy.WatchMyTED
             {
                 DatabaseController.InitializeDatabase();
             }
-
+            
             // initialize GAE clients
             gaeClientReadingForDayByHour = new GAEClient();
             gaeClientReadingForDayBy15Minute = new GAEClient();
