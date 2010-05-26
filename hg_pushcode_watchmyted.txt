@@ -1,0 +1,5 @@
+hg push -v https://watchmyted.googlecode.com/hg/
+
+rem mercurial instructions
+rem change into watchmyted folder
+rem Note that the username is your google username, and the password is the one shown on the source page.
