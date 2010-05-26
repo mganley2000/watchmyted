@@ -10,6 +10,9 @@ using System.Diagnostics;
 
 namespace Energy.Library
 {
+    /// <summary>
+    /// Wrapper API to talk to TED Gateway and get usages from that web service
+    /// </summary>
     public class TEDController
     {
         const string intervalNameSecond = "SECOND";

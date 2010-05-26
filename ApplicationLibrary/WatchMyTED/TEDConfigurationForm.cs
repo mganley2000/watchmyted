@@ -9,6 +9,9 @@ using Energy.Library;
 
 namespace Energy.WatchMyTED
 {
+    /// <summary>
+    /// Working with the TED Gateway, form for configuration
+    /// </summary>
     public partial class TEDConfigurationForm : Form
     {
         private Configuration config = null;

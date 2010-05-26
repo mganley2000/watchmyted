@@ -9,6 +9,9 @@ using Energy.Library;
 
 namespace Energy.WatchMyTED
 {
+    /// <summary>
+    /// FOrm to configure settings used with GAE communication
+    /// </summary>
     public partial class GAEClientConfigurationForm : Form
     {
         private Configuration config = null;

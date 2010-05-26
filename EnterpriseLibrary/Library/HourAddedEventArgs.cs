@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Energy.Library
 {
+    /// <summary>
+    /// For Hour Handling
+    /// </summary>
     public class HourAddedEventArgs : BaseAddedEventArgs
     {
         private TEDHour _hour;

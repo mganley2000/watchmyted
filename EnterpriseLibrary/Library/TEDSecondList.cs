@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Energy.Library
 {
+    /// <summary>
+    /// For TED
+    /// </summary>
     public class TEDSecondList : List<TEDSecond>
     {
     }

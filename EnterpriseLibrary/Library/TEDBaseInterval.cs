@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Energy.Library
 {
+    /// <summary>
+    /// For TED
+    /// </summary>
     public abstract class TEDBaseInterval
     {
         private int _mtu;

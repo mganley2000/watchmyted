@@ -7,6 +7,7 @@ namespace Energy.Library
 {
     /// <summary>
     /// Reading collection class
+    /// Use generics here soon
     /// </summary>
     public class ReadingCollection : System.Collections.CollectionBase
     {

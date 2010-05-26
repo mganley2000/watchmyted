@@ -9,7 +9,9 @@ using System.Runtime.Serialization.Json;
 
 namespace Energy.Library
 {
-
+    /// <summary>
+    /// Helper class to easily use JSON
+    /// </summary>
     public class JSONHelper
     {
 

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Energy.Library
 {
+    /// <summary>
+    /// 15 minute handling
+    /// </summary>
     public class Minute15AddedEventArgs : BaseAddedEventArgs
     {
         private TEDMinute _minute;

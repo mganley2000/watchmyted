@@ -10,6 +10,7 @@ namespace Energy.Library
 {
     /// <summary>
     /// Global variables available to share between all forms
+    /// Unused at this time
     /// </summary>
     public static class Global
     {
