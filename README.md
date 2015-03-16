@@ -1,4 +1,4 @@
-The "Watch My TED" Desktop application gets power readings from your TED Gateway via the TED XML API.
+Imported from google code. The "Watch My TED" Desktop application gets power readings from your TED Gateway via the TED XML API.
 
 Power is charted in a desktop application per-second, per-minute, and per hour.
 
