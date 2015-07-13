@@ -2,7 +2,7 @@ Imported from google code. The "Watch My TED" Desktop application gets power rea
 
 Power is charted in a desktop application per-second, per-minute, and per hour.
 
-You can configure this application to send per-minute power readings to the http://myenergyuse.appspot.com application. The source for this is found at http://code.google.com/p/myenergyuse/
+You can configure this application to send per-minute power readings to the http://myenergyuse.appspot.com application. The source for this is found at https://github.com/mganley2000/myenergyuse
 
 Or you can send to any GAE application that will accept the meter readings (JSON formatted.) For example, you can publish your own private site, using "myenergyuse" as a template.
 
