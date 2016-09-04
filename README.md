@@ -10,7 +10,7 @@ The GAE application charts the power in several views. Per minute for the hour, 
 
 You may host these GAE charts within a Google Gadget on your iGoogle page.
 
-Source code for the desktop application (C#) is found right here, http://code.google.com/p/watchmyted/ 
-Once again, the website is Python, and is found at http://code.google.com/p/myenergyuse/
+Source code for the desktop application (C#) is found right here, https://github.com/mganley2000/watchmyted/ 
+Once again, the website is Python, and is found at https://github.com/mganley2000/myenergyuse/
 
 A 32bit compiled binaries is available here for download.
